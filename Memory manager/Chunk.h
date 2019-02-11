@@ -4,10 +4,10 @@ struct Chunk
 {
 	Chunk* next;
 	void* ptr;
-	int size;
+	int blockNumber;
 	bool isFree;
 
-	Chunk()
-		: next{ nullptr }, ptr{ nullptr }, size{ 0 }, isFree{ true }
+	Chunk(int prevBlockNumber)
+		: next{ nullptr }, isFree{ true }, ptr{ nullptr }, blockNumber{ ++prevBlockNumber }
 	{ }
 };

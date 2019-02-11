@@ -10,7 +10,9 @@ private:
 	int freeChunks;
 	Chunk* chunk;
 
-	void* GetNextFreeBlock(int _size);
+	void SetFreeStatus(Chunk* block, int _size, bool free, void* ptr);
+	Chunk* GetNextFreeBlock(int _size);
+	Chunk* GetFreeBlock(Chunk* ptr);
 
 public:
 	MemoryManager(int _size);
